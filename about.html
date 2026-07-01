@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن — شركة المدينة للمحاماة والاستشارات القانونية</title>
+  <meta name="description"
+    content="تعرّف على مسيرة شركة المدينة للمحاماة وقيمنا الراسخة ورسالتنا الوقائية في تقديم حلول قانونية متكاملة لقطاع الأعمال والشركات.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="theme-toggle.js"></script>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Page Specific Layout Styles */
+    .about-intro .container {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-img-frame {
+      width: 100%;
+      height: 540px;
+      position: relative;
+    }
+
+    .about-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border-glass);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-gold-glow), var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-img-badge .num {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .about-img-badge .lbl {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      padding: 0 10px;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* VALUES */
+    .values {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .value-card {
+      padding: 44px 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .value-icon {
+      width: 68px;
+      height: 68px;
+      background: rgba(212, 175, 55, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--transition-normal);
+      color: var(--accent-gold);
+    }
+
+    .value-card:hover .value-icon {
+      background: var(--accent-gold);
+      color: var(--text-dark);
+      border-color: var(--accent-gold);
+      box-shadow: var(--shadow-gold-glow);
+      transform: scale(1.05);
+    }
+
+    .value-icon svg {
+      stroke: currentColor;
+      transition: var(--transition-normal);
+    }
+
+    .value-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-light);
+      margin-bottom: 14px;
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      background: var(--bg-primary);
+    }
+
+    .timeline-inner {
+      max-width: 840px;
+      margin: 70px auto 0;
+      position: relative;
+    }
+
+    .timeline-inner::before {
+      content: '';
+      position: absolute;
+      right: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--border-glass) 0%, var(--accent-gold) 50%, var(--border-glass) 100%);
+      transform: translateX(50%);
+      box-shadow: var(--shadow-gold-glow);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 70px;
+      align-items: flex-start;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-side {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-side {
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(even) .timeline-side {
+      text-align: right;
+    }
+
+    .timeline-dot {
+      width: 44px;
+      height: 44px;
+      background: var(--bg-primary);
+      border: 3px solid var(--accent-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 3;
+      box-shadow: var(--shadow-gold-glow);
+      color: var(--accent-gold);
+    }
+
+    .timeline-dot svg {
+      stroke: currentColor;
+      width: 18px;
+      height: 18px;
+    }
+
+    .timeline-year {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-side h4 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .timeline-side p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    .timeline-card-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 28px;
+      transition: var(--transition-normal);
+    }
+
+    .timeline-card-box:hover {
+      border-color: var(--border-glass-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stats-about {
+      background: radial-gradient(circle, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+      padding: 80px 0;
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 30px 20px;
+      border-left: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .stat-item:last-child {
+      border-left: none;
+    }
+
+    .stat-number {
+      font-size: 54px;
+      font-weight: 900;
+      color: var(--accent-gold);
+      display: block;
+      line-height: 1;
+      text-shadow: var(--shadow-gold-glow);
+    }
+
+    .stat-label {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* Responsive Adjustments */
+    @media(max-width:1024px) {
+      .about-intro .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-img-frame {
+        height: 380px;
+      }
+
+      .about-img-badge {
+        bottom: -12px;
+        right: -12px;
+        width: 130px;
+        height: 130px;
+      }
+
+      .about-img-badge .num {
+        font-size: 44px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item {
+        border-left: none;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      .stat-item:last-child,
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4) {
+        border-bottom: none;
+      }
+    }
+
+    @media(max-width:768px) {
+      .about-img-frame {
+        height: 260px;
+      }
+
+      .about-img-badge {
+        position: absolute;
+        bottom: -16px;
+        right: 16px;
+        width: 110px;
+        height: 110px;
+      }
+
+      .about-img-badge .num {
+        font-size: 38px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .timeline-inner::before {
+        right: 22px;
+        transform: none;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        flex-direction: column;
+        padding-right: 68px;
+        gap: 20px;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-side,
+      .timeline-item:nth-child(even) .timeline-side {
+        text-align: right;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-number {
+        font-size: 42px;
+      }
+    }
+
+    @media(max-width:480px) {
+      .about-intro .container {
+        padding: 0 16px;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-item {
+        border-left: none;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        padding: 20px 10px;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        padding-right: 52px; /* Reduce padding slightly for 320px screens */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="glowing-orb" style="top: 15%; right: 10%;"></div>
+  <div class="glowing-orb" style="top: 70%; left: 5%;"></div>
+
+  <div class="topbar">
+    <div class="inner">
+      <div class="topbar-links">
+        <span> الرياض، حي الغدير</span>
+        <span>|</span>
+        <a href="mailto:info@madinah.llc">info@madinah.llc</a>
+      </div>
+      <div class="topbar-links">
+        <a href="tel:+9660115001544" dir="ltr">+966 011 500 1544</a>
+        <span>|</span>
+        <span>الأحد – الخميس: ٨ ص – ٦ م</span>
+        <span>|</span>
+        <a href="en/about.html" style="font-weight: 700; color: var(--accent-gold);">EN</a>
+      </div>
+    </div>
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/city4.png" alt="شركة المدينة للمحاماة">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html" class="active">من نحن</a>
+        <a href="services.html">خدماتنا</a>
+        <a href="team.html">فريقنا</a>
+        <a href="careers.html">الوظائف والتدريب</a>
+        <a href="booking.html">حجز موعد</a>
+        <a href="contact.html">تواصل معنا</a>
+        <a href="booking.html" class="nav-cta">طلب خدمة قانونية</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل المظهر">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="12" cy="12" r="5" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+      <a href="en/about.html" class="lang-toggle" aria-label="Switch to English">EN</a>
+      <div class="nav-hamburger" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+    <a href="index.html" onclick="toggleMobileMenu()">الرئيسية</a>
+    <a href="about.html" onclick="toggleMobileMenu()">من نحن</a>
+    <a href="services.html" onclick="toggleMobileMenu()">خدماتنا</a>
+    <a href="team.html" onclick="toggleMobileMenu()">فريقنا</a>
+    <a href="careers.html" onclick="toggleMobileMenu()">الوظائف والتدريب</a>
+    <a href="booking.html" onclick="toggleMobileMenu()">حجز موعد</a>
+    <a href="contact.html" onclick="toggleMobileMenu()">تواصل معنا</a>
+    <a href="en/about.html" style="border:1px solid var(--accent-gold);color:var(--accent-gold);margin-top:12px;border-radius:8px;" onclick="toggleMobileMenu()">EN</a>
+    <a href="booking.html"
+      style="background:var(--accent-gold);color:var(--text-dark);margin-top:8px;border-radius:8px;"
+      onclick="toggleMobileMenu()">طلب خدمة قانونية</a>
+  </div>
+
+  <div class="page-hero hero-about">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">الرئيسية</a><span>/</span><span>من نحن</span></div>
+      <h1>من نحن</h1>
+      <p>قصتنا وقيمنا الراسخة — مسيرة خبرة رائدة تمتد لأكثر من ١٥ عاماً في العمل الوقائي وحماية قطاع الأعمال</p>
+      <a href="booking.html" class="btn-primary hero-cta-btn">احجز موعداً الآن</a>
+    </div>
+  </div>
+
+  <!-- ABOUT INTRO -->
+  <section class="about-intro">
+    <div class="container">
+      <div style="position:relative;" class="reveal">
+        <div class="about-img-frame">
+          <img src="uploads/office-lobby.jpg" alt="مقر شركة المدينة للمحاماة">
+          <div class="about-img-badge">
+            <div class="num">١٥</div>
+            <div class="lbl">عاماً من الموثوقية</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="section-label">قصتنا وعقيدتنا</div>
+        <h2 class="section-title">شريك قانوني أمين <span>يصون قراراتك</span></h2>
+        <p class="section-desc">تأسست شركة المدينة للمحاماة والاستشارات القانونية في عاصمة المملكة العربية السعودية
+          لتتبنى فكراً متطوراً يقود العمل القانوني من طابعه الإجرائي التقليدي إلى فضاء الحماية الوقائية والتحول الرقمي
+          الكامل.</p>
+        <p style="font-size:15px;color:var(--text-muted);line-height:1.9;margin-top:16px;">ندرك تماماً التحديات الإدارية
+          والتشغيلية التي تواجه الشركات الصغيرة والمتوسطة، ونهندس حلولاً استراتيجية تدعم مجالس الإدارة في اتخاذ قراراتها
+          اليومية بكل طمأنينة وامتثال شامل للأنظمة واللوائح المرعية.</p>
+
+        <div style="display:flex;gap:18px;margin-top:36px;flex-wrap:wrap;">
+          <a href="booking.html" class="btn-primary">احجز موعداً الآن</a>
+          <a href="team.html" class="btn-outline-green">تعرّف على مستشارينا</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <div class="section-label" style="justify-content:center;">قيمنا</div>
+        <h2 class="section-title">المبادئ الثابتة <span>التي تحكم عملنا</span></h2>
+        <p class="section-desc" style="margin:0 auto;text-align:center;">نلتزم بمنظومة قيمية صارمة تحدد هويتنا المهنية
+          وتضمن الجودة والأمانة في رعاية مصالح عملائنا</p>
+      </div>
+
+      <div class="values-grid">
+
+        <div class="value-card glow-card reveal reveal-delay-1">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>النزاهة والأمانة المطلقة</h3>
+          <p>نحفظ سرية وخصوصية البيانات والوثائق، ونلتزم بأقصى درجات النزاهة والوضوح الكامل مع موكلينا.</p>
+        </div>
+
+        <div class="value-card glow-card reveal reveal-delay-2">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h3>احترام الزمن والالتزام</h3>
+          <p>ندرك أن الوقت في العمل القانوني هو فيصل حاسم للشركات، لذا نلتزم التزاماً صارماً بالجداول الزمنية والمواعيد.
+          </p>
+        </div>
+
+        <div class="value-card glow-card reveal reveal-delay-3">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>الشراكة الاستراتيجية</h3>
+          <p>لا نعمل كجهة استشارية معزولة، بل ننخرط كشريك وعضو فاعل يدعم استقرار عمل موكلنا ويحمي استثماراته.</p>
+        </div>
+
+        <div class="value-card glow-card reveal reveal-delay-4">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <polyline points="9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+          </div>
+          <h3>التميز الهندسي والتشغيلي</h3>
+          <p>نهندس العقود ونصيغ المذكرات بأعلى مستويات الجودة والتدقيق لتلافي الثغرات وضمان أفضل النتائج الممكنة.</p>
+        </div>
+
+        <div class="value-card glow-card reveal reveal-delay-5">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3>الابتكار والتحول الرقمي</h3>
+          <p>نوظف أحدث التقنيات السحابية والأنظمة لتسهيل وصول عملائنا لملفاتهم وتحديثات قضاياهم بمنتهى السلاسة.</p>
+        </div>
+
+        <div class="value-card glow-card reveal reveal-delay-1">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h3>تغطية وحضور وطني شامل</h3>
+          <p>نخدم قطاع الأعمال في كافة ربوع المملكة وبكل كفاءة، مع قنوات تواصل رقمية فورية ودعم ميداني متميز.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <div class="section-label" style="justify-content:center;">مسيرتنا عبر الزمن</div>
+        <h2 class="section-title">تاريخ يوثّق <span>نموّنا ونجاحاتنا</span></h2>
+      </div>
+
+      <div class="timeline-inner">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-side">
+            <div class="timeline-card-box">
+              <div class="timeline-year">٢٠١٠</div>
+              <h4>التأسيس والانطلاقة بالرياض</h4>
+              <p>بدأت المسيرة بنخبة متخصصة من ٤ محامين أكفاء في العاصمة الرياض لرعاية قطاع الشركات الناشئة وتقديم أبعاد
+                وقائية جديدة.</p>
+            </div>
+          </div>
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <div class="timeline-side"></div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-side"></div>
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <div class="timeline-side">
+            <div class="timeline-card-box">
+              <div class="timeline-year">٢٠١٤</div>
+              <h4>تأسيس فرع المدينة المنورة</h4>
+              <p>افتتاح مكتبنا الإقليمي بمنطقة المدينة المنورة لتغطية احتياجات قطاع الأعمال في المنطقة الغربية وتوسيع فريق العمل وتأسيس قسم متخصص للتحكيم وصياغة عقود التجارة الدولية المعقدة.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-side">
+            <div class="timeline-card-box">
+              <div class="timeline-year">٢٠١٨</div>
+              <h4>الامتياز والجوائز القانونية</h4>
+              <p>حصدنا جائزة التميز القانوني المقدمة لأفضل شركة محاماة صاعدة في المملكة بفضل ابتكار نموذج الإدارة
+                القانونية الرقمية للشركات.</p>
+            </div>
+          </div>
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <div class="timeline-side"></div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-side"></div>
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <div class="timeline-side">
+            <div class="timeline-card-box">
+              <div class="timeline-year">٢٠٢٦</div>
+              <h4>الريادة والتمثيل الرقمي</h4>
+              <p>اليوم، وبفريق يضم أكثر من ٢٠ مستشاراً ومحامياً نخبوياً، أتممنا بنجاح أرشفة وإدارة ما يزيد عن ١٥٠٠ قضية
+                ونزاع تجاري بكفاءة بالغة.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-about">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-number" data-target="1500">٠</span>
+          <div class="stat-label">قضية ناجحة</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <span class="stat-number" data-target="15">٠</span>
+          <div class="stat-label">سنة خبرة</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <span class="stat-number" data-target="98">٠</span>
+          <div class="stat-label">٪ رضا وموثوقية</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <span class="stat-number" data-target="20">٠</span>
+          <div class="stat-label">مستشار ومحامٍ متخصص</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="uploads/city4.png" alt="المدينة للمحاماة" class="footer-logo-img">
+          </a>
+          <p>حماية قانونية متكاملة لقطاع الأعمال والشركات والمؤسسات المالية في المملكة العربية السعودية وفق أعلى أساليب
+            الرقابة والحوكمة والامتثال.</p>
+          <div class="footer-open">
+            <span>أوقات الاستقبال الرسمية</span>
+            <strong>الأحد – الخميس | ٨:٠٠ صباحاً – ٦:٠٠ مساءً</strong>
+          </div>
+        </div>
+
+        <div>
+          <h5>مجالات الممارسة</h5>
+          <ul>
+            <li><a href="services.html#operations">تشغيل الإدارات القانونية</a></li>
+            <li><a href="services.html#consult">الاستشارات القانونية</a></li>
+            <li><a href="services.html#disputes">إدارة النزاعات والقاضايا</a></li>
+            <li><a href="services.html#inheritance">تصفية التركات وتوزيع الأصول</a></li>
+            <li><a href="services.html#contracts">صياغة وتدقيق العقود</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>روابط سريعة</h5>
+          <ul>
+            <li><a href="about.html">من نحن وعقيدتنا</a></li>
+            <li><a href="team.html">كبار مستشارينا</a></li>
+            <li><a href="services.html">خدماتنا وممارساتنا</a></li>
+            <li><a href="careers.html">الوظائف والتدريب</a></li>
+            <li><a href="booking.html">بوابة حجز موعد</a></li>
+            <li><a href="contact.html">تواصل معنا وقنواتنا</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>قنوات الاتصال</h5>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>الرياض — حي الغدير، شارع محمد المقدمي</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>المدينة — حي الجشم، طريق الملك عبدالله</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z" />
+              </svg>
+              <a href="tel:+9660115001544" dir="ltr" style="color: inherit; text-decoration: none;">+966 011 500 1544</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="mailto:info@madinah.llc" style="color: inherit; text-decoration: none;">info@madinah.llc</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>جميع الحقوق محفوظة © ٢٠٢٦ — شركة المدينة للمحاماة والاستشارات القانونية</span>
+        <div style="display:flex;gap:20px;align-items:center;">
+          <a href="en/about.html" style="font-weight: 700; color: var(--accent-gold);">EN</a>
+          <span>|</span>
+          <a href="#">سياسة الخصوصية السرية</a>
+          <a href="#">شروط الاستخدام والتوكيل</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    const obs = new IntersectionObserver(e => e.forEach(x => {
+      if (x.isIntersecting) x.target.classList.add('visible');
+    }), { threshold: 0.08 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => obs.observe(el));
+
+    const arabicNums = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+    function toArabic(n) {
+      return n.toString().split('').map(d => arabicNums[+d] || d).join('');
+    }
+    function animateCounter(el, target) {
+      let start = 0;
+      const step = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 2000, 1);
+        el.textContent = toArabic(Math.floor((1 - Math.pow(1 - p, 3)) * target));
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = toArabic(target);
+      };
+      requestAnimationFrame(step);
+    }
+
+    const statObs = new IntersectionObserver(e => e.forEach(x => {
+      if (x.isIntersecting) {
+        animateCounter(x.target, +x.target.dataset.target);
+        statObs.unobserve(x.target);
+      }
+    }), { threshold: 0.4 });
+    document.querySelectorAll('.stat-number[data-target]').forEach(el => statObs.observe(el));
+  </script>
+  <script src="custom-cursor.js" defer></script>
+</body>
+
+</html>
